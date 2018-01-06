@@ -43,6 +43,7 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
+    - msgpack-python
 
 test:
   imports:
