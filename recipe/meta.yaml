@@ -21,9 +21,9 @@ build:
     - runzeo=ZEO.runzeo:main
     - zeoctl=ZEO.zeoctl:main
     - zeo-nagios=ZEO.nagios:main
-
   number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
+  noarch: python
 
 requirements:
   build:
