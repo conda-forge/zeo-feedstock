@@ -1,8 +1,9 @@
 {% set name = "ZEO" %}
-{% set version = "5.1.2" %}
+{% set version = "5.2.0" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "9b9be96dcead54994ef7bb516044f8721f866a9c8a01f3fe5f48d7d0fc457429" %}
+{% set hash = "4c1a9fc01114382e58b7ae21135fe0c222f214bf680ad073d5fdccaaaccd6e57" %}
+
 
 package:
   name: {{ name|lower }}
@@ -20,7 +21,6 @@ build:
     - runzeo=ZEO.runzeo:main
     - zeoctl=ZEO.zeoctl:main
     - zeo-nagios=ZEO.nagios:main
-  
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   noarch: python
