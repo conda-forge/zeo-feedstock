@@ -3,7 +3,7 @@
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
 {% set hash = "4c1a9fc01114382e58b7ae21135fe0c222f214bf680ad073d5fdccaaaccd6e57" %}
-{% set build = 0 %}
+
 
 package:
   name: {{ name|lower }}
@@ -34,7 +34,7 @@ requirements:
     - python
     - setuptools
     - trollius  # [py2k]
-    - futures  # [py<32]
+    - futures  # [py2k]
     - zodb >=5.1.1
     - six
     - transaction >=2.0.3
