@@ -1,8 +1,8 @@
 {% set name = "ZEO" %}
-{% set version = "5.2.0" %}
+{% set version = "5.2.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "4c1a9fc01114382e58b7ae21135fe0c222f214bf680ad073d5fdccaaaccd6e57" %}
+{% set hash = "cd65379f3c231a411a000c352bb700c4a635d74be947b09b1ce84b514f16beb4" %}
 
 
 package:
