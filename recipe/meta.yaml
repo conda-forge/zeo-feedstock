@@ -1,8 +1,7 @@
 {% set name = "ZEO" %}
-{% set version = "5.2.0" %}
+{% set version = "5.2.2" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "4c1a9fc01114382e58b7ae21135fe0c222f214bf680ad073d5fdccaaaccd6e57" %}
+{% set hash = "21696a9be71477ce83a4a46b5e901a518eaed86c48c06bf5a6b648a5d034c7d4" %}
 
 
 package:
@@ -12,10 +11,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  sha256: {{ hash }}
 
 build:
-  preserve_egg_dir: True
+  preserve_egg_dir: true
   entry_points:
     - zeopack=ZEO.scripts.zeopack:main
     - runzeo=ZEO.runzeo:main
@@ -66,7 +65,7 @@ about:
   license_file: LICENSE.txt
   license: ZPL 2.1
   license_family: OTHER
-  summary: 'ZEO - Single-server client-server database server for ZODB'
+  summary: ZEO - Single-server client-server database server for ZODB
   dev_url: https://github.com/zopefoundation/ZEO
   doc_url: https://github.com/zopefoundation/ZEO
 
