@@ -1,8 +1,5 @@
 {% set name = "ZEO" %}
-{% set version = "5.2.0" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "4c1a9fc01114382e58b7ae21135fe0c222f214bf680ad073d5fdccaaaccd6e57" %}
+{% set version = "5.2.2" %}
 
 
 package:
@@ -10,23 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 21696a9be71477ce83a4a46b5e901a518eaed86c48c06bf5a6b648a5d034c7d4
 
 build:
-  preserve_egg_dir: True
   entry_points:
     - zeopack=ZEO.scripts.zeopack:main
     - runzeo=ZEO.runzeo:main
     - zeoctl=ZEO.zeoctl:main
     - zeo-nagios=ZEO.nagios:main
-  number: 1
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
-  build:
+  host:
+    - pip
     - python >=3.6
     - setuptools
 
@@ -58,11 +54,15 @@ test:
     - runzeo --help
     - zeoctl --help
     - zeo-nagios --help
+    - pip check
+    
+  requires:
+    - pip
 
 about:
   home: https://github.com/zopefoundation/ZEO
   license_file: LICENSE.txt
-  license: ZPL 2.1
+  license: ZPL-2.1
   license_family: OTHER
   summary: 'ZEO - Single-server client-server database server for ZODB'
   dev_url: https://github.com/zopefoundation/ZEO
