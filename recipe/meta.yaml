@@ -21,17 +21,17 @@ build:
     - runzeo=ZEO.runzeo:main
     - zeoctl=ZEO.zeoctl:main
     - zeo-nagios=ZEO.nagios:main
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
   noarch: python
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - setuptools
     - trollius  # [py2k]
     - futures  # [py2k]
@@ -73,3 +73,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
