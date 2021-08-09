@@ -3,7 +3,7 @@ About zeo
 
 Home: https://github.com/zopefoundation/ZEO
 
-Package license: ZPL 2.1
+Package license: ZPL-2.1
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zeo-feedstock/blob/master/LICENSE.txt)
 
