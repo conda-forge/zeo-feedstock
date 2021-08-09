@@ -1,5 +1,5 @@
 {% set name = "ZEO" %}
-{% set version = "5.2.2" %}
+{% set version = "5.2.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21696a9be71477ce83a4a46b5e901a518eaed86c48c06bf5a6b648a5d034c7d4
+  sha256: 3f7e1039d3831f03089fd68cf9168fc0237410dcd52ee2668e4bcaec77f5f026
 
 build:
   entry_points:
@@ -55,7 +55,7 @@ test:
     - zeoctl --help
     - zeo-nagios --help
     - pip check
-    
+
   requires:
     - pip
 
@@ -64,7 +64,7 @@ about:
   license_file: LICENSE.txt
   license: ZPL-2.1
   license_family: OTHER
-  summary: 'ZEO - Single-server client-server database server for ZODB'
+  summary: ZEO - Single-server client-server database server for ZODB
   dev_url: https://github.com/zopefoundation/ZEO
   doc_url: https://github.com/zopefoundation/ZEO
 
