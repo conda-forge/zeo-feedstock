@@ -1,5 +1,5 @@
 {% set name = "ZEO" %}
-{% set version = "5.2.3" %}
+{% set version = "5.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3f7e1039d3831f03089fd68cf9168fc0237410dcd52ee2668e4bcaec77f5f026
+  sha256: ffc54334f8384d6faf1693dce823c0a5fcd429fa015c47d2d49d1bd689997157
 
 build:
   entry_points:
