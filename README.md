@@ -5,7 +5,7 @@ Home: https://github.com/zopefoundation/ZEO
 
 Package license: ZPL-2.1
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zeo-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zeo-feedstock/blob/main/LICENSE.txt)
 
 Summary: ZEO - Single-server client-server database server for ZODB
 
@@ -19,8 +19,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4445&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zeo-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4445&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/zeo-feedstock?branchName=main">
       </a>
     </td>
   </tr>
