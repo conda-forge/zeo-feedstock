@@ -1,5 +1,5 @@
 {% set name = "ZEO" %}
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 
 
 package:
@@ -8,27 +8,24 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ffc54334f8384d6faf1693dce823c0a5fcd429fa015c47d2d49d1bd689997157
+  sha256: 50f640b36a992f66ed58caf55be80faf26deaccd4f02a84caae3c440f6320133
 
 build:
-  entry_points:
-    - zeopack=ZEO.scripts.zeopack:main
-    - runzeo=ZEO.runzeo:main
-    - zeoctl=ZEO.zeoctl:main
-    - zeo-nagios=ZEO.nagios:main
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
+  entry_points:
+    - zeopack = ZEO.scripts.zeopack:main
+    - runzeo = ZEO.runzeo:main
+    - zeoctl = ZEO.zeoctl:main
+    - zeo-nagios = ZEO.nagios:main
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.6
-    - setuptools
-
+    - pip
   run:
     - python >=3.6
-    - setuptools
     - zodb >=5.1.1
     - six
     - transaction >=2.0.3
@@ -37,25 +34,15 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
-    - msgpack-python
 
 test:
   imports:
     - ZEO
-    - ZEO.asyncio
-    - ZEO.scripts
-    - ZEO.tests
-    - ZEO.tests.ZEO4
-    - ZEO.tests.ZEO4.auth
-    - ZEO.tests.ZEO4.zrpc
-
   commands:
-    # no --help option for zeopack: - zeopack --help
+    - pip check
     - runzeo --help
     - zeoctl --help
     - zeo-nagios --help
-    - pip check
-
   requires:
     - pip
 
