@@ -34,8 +34,6 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
-    - futures  # [py==27]
-    - trollius  # [py==27]
 
 test:
   imports:
