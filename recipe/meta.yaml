@@ -11,24 +11,20 @@ source:
   sha256: 50f640b36a992f66ed58caf55be80faf26deaccd4f02a84caae3c440f6320133
 
 build:
-  entry_points:
-    - zeopack=ZEO.scripts.zeopack:main
-    - runzeo=ZEO.runzeo:main
-    - zeoctl=ZEO.zeoctl:main
-    - zeo-nagios=ZEO.nagios:main
-  number: 0
+    entry_points:
+    - zeopack = ZEO.scripts.zeopack:main
+    - runzeo = ZEO.runzeo:main
+    - zeoctl = ZEO.zeoctl:main
+    - zeo-nagios = ZEO.nagios:main
   script: {{ PYTHON }} -m pip install . -vv
-  noarch: python
+  number: 0
 
 requirements:
   host:
+    - python
     - pip
-    - python >=3.6
-    - setuptools
-
   run:
-    - python >=3.6
-    - setuptools
+    - python
     - zodb >=5.1.1
     - six
     - transaction >=2.0.3
@@ -37,25 +33,18 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
-    - msgpack-python
+    - futures  # [py==27]
+    - trollius  # [py==27]
 
 test:
   imports:
     - ZEO
-    - ZEO.asyncio
-    - ZEO.scripts
-    - ZEO.tests
-    - ZEO.tests.ZEO4
-    - ZEO.tests.ZEO4.auth
-    - ZEO.tests.ZEO4.zrpc
-
   commands:
-    # no --help option for zeopack: - zeopack --help
+    - pip check
+    - zeopack --help
     - runzeo --help
     - zeoctl --help
     - zeo-nagios --help
-    - pip check
-
   requires:
     - pip
 
