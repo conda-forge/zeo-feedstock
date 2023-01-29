@@ -11,7 +11,8 @@ source:
   sha256: 50f640b36a992f66ed58caf55be80faf26deaccd4f02a84caae3c440f6320133
 
 build:
-    entry_points:
+  noarch: python
+  entry_points:
     - zeopack = ZEO.scripts.zeopack:main
     - runzeo = ZEO.runzeo:main
     - zeoctl = ZEO.zeoctl:main
@@ -21,10 +22,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - zodb >=5.1.1
     - six
     - transaction >=2.0.3
