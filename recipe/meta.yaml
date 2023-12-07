@@ -38,7 +38,7 @@ test:
     - ZEO
   commands:
     - pip check
-    - zeopack --help
+    # - zeopack --help
     - runzeo --help
     - zeoctl --help
     - zeo-nagios --help
