@@ -1,33 +1,31 @@
-{% set name = "ZEO" %}
+{% set name = "zeo" %}
 {% set version = "6.0.0" %}
-
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ZEO-{{ version }}.tar.gz
   sha256: be238b5abf9ea3396935b33530f66a9afa61ccf8b6b813c2cfdcb2aa18541be7
 
 build:
-  noarch: python
   entry_points:
     - zeopack = ZEO.scripts.zeopack:main
     - runzeo = ZEO.runzeo:main
     - zeoctl = ZEO.zeoctl:main
     - zeo-nagios = ZEO.nagios:main
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - zodb >=5.1.1
-    - six
     - transaction >=2.0.3
     - persistent >=4.1.0
     - zc.lockfile
@@ -40,6 +38,7 @@ test:
     - ZEO
   commands:
     - pip check
+    - zeopack --help
     - runzeo --help
     - zeoctl --help
     - zeo-nagios --help
