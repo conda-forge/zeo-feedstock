@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ZEO-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ZEO-{{ version }}.tar.gz
   sha256: be238b5abf9ea3396935b33530f66a9afa61ccf8b6b813c2cfdcb2aa18541be7
 
 build:
@@ -17,14 +17,15 @@ build:
     - zeo-nagios = ZEO.nagios:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - zodb >=5.1.1
     - transaction >=2.0.3
     - persistent >=4.1.0
@@ -44,6 +45,7 @@ test:
     - zeo-nagios --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/zopefoundation/ZEO
