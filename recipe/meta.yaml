@@ -1,13 +1,13 @@
 {% set name = "zeo" %}
-{% set version = "6.1" %}
+{% set version = "6.2" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 24589b9cf611c444aa906eb1ce9cd46a2a1193c6f361411e2baf7bad703ca4de
+  sha256: e29c52eb9767d94b270bff4c6eca4c863fcbc46d15323686e6fb71bfe43c7899
 
 build:
   entry_points:
@@ -23,7 +23,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools <80
   run:
     - python >={{ python_min }}
     - zodb >=5.1.1
@@ -33,6 +33,7 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
+    - setuptools <80
 
 test:
   imports:
