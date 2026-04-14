@@ -23,7 +23,7 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools <81
+    - setuptools <80
   run:
     - python >={{ python_min }}
     - zodb >=5.1.1
@@ -33,6 +33,7 @@ requirements:
     - zconfig
     - zdaemon
     - zope.interface
+    - setuptools <80
 
 test:
   imports:
